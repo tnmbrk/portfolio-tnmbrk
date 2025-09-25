@@ -1,0 +1,29 @@
+{
+  "name": "portfolio-toni",
+  "private": true,
+  "version": "0.0.0",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "npm run prettier && parcel",
+    "build": "npm run prettier && npm run build:css && parcel build",
+    "build:css": "tailwindcss -i ./src/css/source.css -o ./src/style.css",
+    "prettier": "prettier --write ./src/"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10",
+    "parcel": "latest",
+    "posthtml-doctype": "^1.1.1",
+    "posthtml-include": "^2.0.1",
+    "prettier": "3.6.2"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "preline": "^3.2.3",
+    "tailwindcss": "^4.1.13"
+  },
+  "nodemonConfig": {
+    "ext": "js,html",
+    "watch": ["src"]
+  }
+}
