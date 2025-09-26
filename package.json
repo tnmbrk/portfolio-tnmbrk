@@ -6,7 +6,8 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "npm run prettier && parcel",
-    "build": "npm run prettier && npm run build:css && parcel build",
+    "re:build": "npm run prettier && npm run build:css && parcel build",
+    "build": "npm run build:css && parcel build",
     "build:css": "tailwindcss -i ./src/css/source.css -o ./src/style.css",
     "prettier": "prettier --write ./src/"
   },
