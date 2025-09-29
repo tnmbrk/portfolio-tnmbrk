@@ -1,9 +1,8 @@
-if (window.parent) {
-  console.log("Imported from:", window.parent.location.href);
-} else {
-  console.log("Run directly:", __filename);
-}
-console.log("Hello world!");
+// if (window.parent) {
+//   console.log("Imported from:", window.parent.location.href);
+// } else {
+//   console.log("Run directly:", __filename);
+// }
 
 const html = document.querySelector("html");
 const isLightOrAuto =
