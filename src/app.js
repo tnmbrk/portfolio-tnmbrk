@@ -22,25 +22,3 @@ else if (isDarkOrAuto && !html.classList.contains("dark"))
   html.classList.add("dark");
 else if (isLightOrAuto && !html.classList.contains("light"))
   html.classList.add("light");
-
-const el = HSScrollspy.getInstance(
-  '[data-hs-scrollspy="#hs-scrollspy-basic-usage"]',
-  true,
-);
-const collapse = HSCollapse.getInstance(
-  '[data-hs-collapse="#hs-navbar-header-floating"]',
-  true,
-);
-
-el.element.on("beforeScroll", (instance) => {
-  return new Promise((res) => {
-    if (collapse.element.el.classList.contains("open")) {
-      collapse.element.hide();
-      HSStaticMethods.afterTransition(collapse.element.content, () =>
-        res(true),
-      );
-    } else {
-      res(true);
-    }
-  });
-});
