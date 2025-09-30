@@ -12,14 +12,18 @@
     "prettier": "prettier --write ./src/"
   },
   "devDependencies": {
+    "@parcel/compressor-brotli": "^2.16.0",
+    "@parcel/compressor-gzip": "^2.16.0",
     "@tailwindcss/forms": "^0.5.10",
     "parcel": "latest",
     "posthtml-doctype": "^1.1.1",
     "posthtml-include": "^2.0.1",
     "prettier": "3.6.2",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "svgo": "^3.3.2"
   },
   "dependencies": {
+    "@parcel/optimizer-htmlnano": "^2.16.0",
     "@tailwindcss/cli": "^4.1.13",
     "preline": "^3.2.3",
     "tailwindcss": "^4.1.13"
