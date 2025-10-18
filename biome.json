@@ -37,7 +37,12 @@
       "bracketSpacing": true
     }
   },
-  "html": { "formatter": { "selfCloseVoidElements": "always" } },
+  "html": {
+    "formatter": { "selfCloseVoidElements": "always", 
+	"enabled": true,
+	"attributePosition":"auto"
+}
+  },
   "assist": {
     "enabled": true,
     "actions": { "source": { "organizeImports": "on" } }
