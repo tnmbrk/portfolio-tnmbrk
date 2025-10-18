@@ -1,20 +1,20 @@
 {
-  "name": "portfolio-toni",
+  "name": "portfolio-tnmbrk",
+  "author": {"name": "Toni Mubarok"},
   "private": true,
   "version": "0.0.0",
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel",
+    "start": "npm run prettier && parcel",
     "re:build": "npm run clean && npm run prettier && npm run build:css && parcel build",
     "build": "npm run clean && npm run build:css && parcel build",
     "build:css": "tailwindcss -i ./src/css/source.css -o ./src/style.css",
-    "prettier": "prettier --write ./src/",
+    "prettier": "biome format --write ./src/",
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@parcel/compressor-brotli": "^2.16.0",
-    "@parcel/compressor-gzip": "^2.16.0",
+    "@biomejs/biome": "2.2.6",
     "@parcel/optimizer-htmlnano": "^2.16.0",
     "@parcel/packager-raw-url": "^2.16.0",
     "@parcel/transformer-webmanifest": "^2.16.0",
@@ -22,7 +22,6 @@
     "parcel": "latest",
     "posthtml-doctype": "^1.1.1",
     "posthtml-include": "^2.0.1",
-    "prettier": "3.6.2",
     "rimraf": "^6.0.1",
     "sharp": "^0.33.5",
     "svgo": "^3.3.2"
