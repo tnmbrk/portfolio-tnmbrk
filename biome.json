@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "files": { "ignoreUnknown": false },
   "formatter": {
@@ -8,7 +8,7 @@
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
-    "lineWidth": 80,
+    "lineWidth": 100,
     "attributePosition": "auto",
     "bracketSameLine": false,
     "bracketSpacing": true,
@@ -38,13 +38,23 @@
     }
   },
   "html": {
-    "formatter": { "selfCloseVoidElements": "always", 
-	"enabled": true,
-	"attributePosition":"auto"
-}
+    "formatter": {
+      "selfCloseVoidElements": "always",
+      "enabled": true,
+      "attributePosition": "auto"
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
   },
   "assist": {
     "enabled": true,
-    "actions": { "source": { "organizeImports": "on" } }
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
   }
 }

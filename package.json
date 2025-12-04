@@ -1,6 +1,8 @@
 {
   "name": "portfolio-tnmbrk",
-  "author": {"name": "Toni Mubarok"},
+  "author": {
+    "name": "Toni Mubarok"
+  },
   "private": true,
   "version": "0.0.0",
   "source": "src/index.html",
@@ -14,12 +16,13 @@
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.6",
-    "@parcel/optimizer-htmlnano": "^2.16.0",
-    "@parcel/packager-raw-url": "^2.16.0",
-    "@parcel/transformer-webmanifest": "^2.16.0",
+    "@biomejs/biome": "2.3.8",
+    "@parcel/optimizer-htmlnano": "^2.16.1",
+    "@parcel/packager-raw-url": "^2.16.1",
+    "@parcel/transformer-webmanifest": "^2.16.1",
     "@tailwindcss/forms": "^0.5.10",
-    "parcel": "latest",
+    "baseline-browser-mapping": "^2.8.32",
+    "parcel": "^2.16.1",
     "posthtml-doctype": "^1.1.1",
     "posthtml-include": "^2.0.1",
     "rimraf": "^6.0.1",
