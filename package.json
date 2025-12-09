@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
+    "js-cookie": "^3.0.5",
     "preline": "^3.2.3",
     "tailwindcss": "^4.1.13"
   },
