@@ -9,11 +9,12 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "bun run prettier && parcel",
-    "re:build": "bun run clean && bun run prettier && bun run build:css && parcel build",
-    "build": "bun run clean && bun run build:css && parcel build",
+    "re:build": "bun run clean && bun run prettier && bun run build:css && bun run build:js && parcel build",
+    "build": "bun run clean && bun run build:css && bun run build:js && parcel build",
     "build:css": "tailwindcss -i ./src/css/source.css -o ./src/style.css",
     "prettier": "biome format --write ./src/",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "build:js": "bun build ./src/scripts/app.js --outfile ./src/script.js --production && bun build ./node_modules/preline/dist/preline.js --outfile ./src/preline.js --production"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.8",

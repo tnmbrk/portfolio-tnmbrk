@@ -47,13 +47,14 @@
 
     <!-- Android / PWA (Web App Manifest) -->
     <link rel="manifest" href="site.webmanifest" />
-    <script defer type="module" src="app.js"></script>
+    <script defer src="script.js"></script>
   </head>
+
   <body class="dark:bg-neutral-900">
     <include src="./component/header.html"></include>
     <include src="./component/main.html"></include>
     <include src="./component/footer.html"></include>
-    <script src="../node_modules/preline/dist/preline.js"></script>
+    <script defer type="module" src="preline.js"></script>
     <!-- Cloudflare Web Analytics -->
     <script
       defer
