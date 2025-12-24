@@ -8,9 +8,9 @@
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "npm run prettier && parcel",
-    "re:build": "npm run clean && npm run prettier && npm run build:css && parcel build",
-    "build": "npm run clean && npm run build:css && parcel build",
+    "start": "bun run prettier && parcel",
+    "re:build": "bun run clean && bun run prettier && bun run build:css && parcel build",
+    "build": "bun run clean && bun run build:css && parcel build",
     "build:css": "tailwindcss -i ./src/css/source.css -o ./src/style.css",
     "prettier": "biome format --write ./src/",
     "clean": "rimraf dist"
@@ -39,5 +39,10 @@
     "watch": [
       "src"
     ]
-  }
+  },
+  "trustedDependencies": [
+    "@parcel/watcher",
+    "@swc/core",
+    "@tailwindcss/oxide"
+  ]
 }
