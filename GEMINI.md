@@ -21,7 +21,7 @@ The key technologies and architectural choices are:
 To start the local development server:
 
 ```bash
-npm start
+bun start
 ```
 
 This command will also run the Biome formatter. The development server will watch for changes in the `src` directory and automatically reload.
@@ -31,7 +31,7 @@ This command will also run the Biome formatter. The development server will watc
 To build the project for production:
 
 ```bash
-npm run build
+bun run build
 ```
 
 This command will:
@@ -41,9 +41,9 @@ This command will:
 
 ## Development Conventions
 
-- **Code Formatting**: All code in the `src` directory should be formatted using Biome. The `npm start` command runs this automatically, but you can also run it manually:
+- **Code Formatting**: All code in the `src` directory should be formatted using Biome. The `bun start` command runs this automatically, but you can also run it manually:
   ```bash
-  npm run prettier
+  bun run prettier
   ```
 - **Modularity**: HTML should be kept modular. Create reusable components in the `src/component/` directory and include them in the main pages using the `<include>` tag.
 - **Styling**: Utility-first styling with Tailwind CSS is the convention. Avoid writing custom CSS where possible.
