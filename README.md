@@ -50,6 +50,8 @@ To build the project for production:
 bun run build
 ```
 
+**Note:** The build process currently requires Node.js. This is because Parcel, our bundler, relies on `Module.load`, which is not yet fully supported by Bun.
+
 This command will:
 1.  Clean the `dist` directory.
 2.  Build the Tailwind CSS.
