@@ -45,6 +45,9 @@
   "trustedDependencies": [
     "@parcel/watcher",
     "@swc/core",
-    "@tailwindcss/oxide"
+    "@tailwindcss/oxide",
+    "lmdb",
+    "msgpackr-extract",
+    "sharp"
   ]
 }
