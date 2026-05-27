@@ -6,11 +6,15 @@
   "private": true,
   "version": "0.0.0",
   "source": "src/*.html",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions"
+  ],
   "scripts": {
     "start": "bun run prettier && parcel",
-    "re:build": "bun run clean && bun run prettier && bun run build:css && bun run build:js && parcel build",
-    "build": "bun run clean && bun run build:css && bun run build:js && parcel build && cd dist && bun build --compile --target=browser --minify ./*.html --outdir=../public",
+    "re:build": "bun run clean && bun run prettier && bun run build:css && bun run build:js && parcel build && cd dist && bun build --target=browser --production ./*.html --outdir=../public",
+    "build": "bun run clean && bun run build:css && bun run build:js && parcel build --no-source-maps && cd dist && bun build --target=browser --production ./*.html --outdir=../public",
     "build:css": "tailwindcss -i ./src/css/source.css -o ./src/style.css",
     "prettier": "biome format --write ./src/",
     "clean": "rimraf dist && rimraf public",
