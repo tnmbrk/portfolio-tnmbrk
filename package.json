@@ -10,10 +10,10 @@
   "scripts": {
     "start": "bun run prettier && parcel",
     "re:build": "bun run clean && bun run prettier && bun run build:css && bun run build:js && parcel build",
-    "build": "bun run clean && bun run build:css && bun run build:js && bun build --compile --target=browser --minify src/*.html --outdir=./dist",
+    "build": "bun run clean && bun run build:css && bun run build:js && parcel build && cd dist && bun build --target=browser --minify ./*.html --outdir=../public",
     "build:css": "tailwindcss -i ./src/css/source.css -o ./src/style.css",
     "prettier": "biome format --write ./src/",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist && rimraf public",
     "build:js": "bun build ./src/scripts/app.js --outfile ./src/script.js --production && bun build ./node_modules/preline/dist/preline.js --outfile ./src/preline.js --production"
   },
   "devDependencies": {
