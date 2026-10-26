@@ -45,6 +45,9 @@ const translations = {
         education: 'Education',
         downloadCv: 'Download CV',
         headline: 'Senior QA Specialist & Technical Project Manager',
+        pageTitle: 'Toni Mubarok | Senior QA Specialist & Technical Project Manager',
+        metaDescription:
+            'Portfolio and résumé of Toni Mubarok, a Senior QA Specialist and Technical Project Manager with experience across games, web, mobile, APIs, and platform products.',
         languages: 'Languages:',
         projectManagement: 'Project management:',
         testingExpertise: 'Testing Expertise:',
@@ -80,6 +83,9 @@ const translations = {
         education: 'Pendidikan',
         downloadCv: 'Unduh CV',
         headline: 'Senior QA & Manajer Proyek Teknis',
+        pageTitle: 'Toni Mubarok | Senior QA & Manajer Proyek Teknis',
+        metaDescription:
+            'Portofolio dan Curriculum Vitae Toni Mubarok, Senior QA Specialist dan Manajer Proyek Teknis dengan pengalaman di bidang game, web, mobile, API, dan produk platform.',
         languages: 'Bahasa pemrograman:',
         projectManagement: 'Manajemen proyek:',
         testingExpertise: 'Keahlian pengujian:',
@@ -180,14 +186,14 @@ const setLanguage = (language) => {
     });
 
     // Translate meta tags for SEO and social sharing
-    const pageTitle = translations[selectedLanguage]?.headline || translations.en.headline;
-    const pageSummary = translations[selectedLanguage]?.summary || translations.en.summary;
+    const pageTitle = translations[selectedLanguage]?.pageTitle || translations.en.pageTitle;
+    const pageDescription = translations[selectedLanguage]?.metaDescription || translations.en.metaDescription;
 
     document.title = pageTitle;
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-        metaDescription.setAttribute('content', pageSummary);
+        metaDescription.setAttribute('content', pageDescription);
     }
 
     const ogTitle = document.querySelector('meta[property="og:title"]');
@@ -197,7 +203,7 @@ const setLanguage = (language) => {
 
     const ogDescription = document.querySelector('meta[property="og:description"]');
     if (ogDescription) {
-        ogDescription.setAttribute('content', pageSummary);
+        ogDescription.setAttribute('content', pageDescription);
     }
 
     try {
