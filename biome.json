@@ -1,71 +1,50 @@
-  {
-  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
-  "files": {
-    "ignoreUnknown": false
-  },
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": false,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineEnding": "lf",
-    "lineWidth": 100,
-    "attributePosition": "auto",
-    "bracketSameLine": false,
-    "bracketSpacing": true,
-    "expand": "auto",
-    "useEditorconfig": true,
-    "includes": [
-      "**",
-      "!**/build",
-      "!**/coverage",
-      "!**/dist",
-      "!**/node_modules",
-      "!**/.parcel-cache"
-    ]
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true
-    }
-  },
-  "javascript": {
+{
+    "$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "useIgnoreFile": true
+    },
+    "files": {
+        "ignoreUnknown": true,
+        "includes": [
+            "**",
+            "!**/build",
+            "!**/coverage",
+            "!**/dist",
+            "!**/node_modules",
+            "!**/.parcel-cache",
+            "!src/script.js",
+            "!src/preline.js",
+            "!src/style.css"
+        ]
+    },
     "formatter": {
-      "jsxQuoteStyle": "double",
-      "quoteProperties": "asNeeded",
-      "trailingCommas": "all",
-      "semicolons": "asNeeded",
-      "arrowParentheses": "always",
-      "bracketSameLine": false,
-      "quoteStyle": "single",
-      "attributePosition": "auto",
-      "bracketSpacing": true
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 120
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "a11y": {
+                "noSvgWithoutTitle": "off"
+            }
+        }
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "single",
+            "semicolons": "always",
+            "trailingCommas": "all",
+            "bracketSpacing": false,
+            "arrowParentheses": "always"
+        }
+    },
+    "css": {
+        "parser": {
+            "tailwindDirectives": true
+        }
     }
-  },
-  "html": {
-    "formatter": {
-      "selfCloseVoidElements": "always",
-      "enabled": true,
-      "attributePosition": "auto"
-    }
-  },
-  "css": {
-    "parser": {
-      "tailwindDirectives": true
-    }
-  },
-  "assist": {
-    "enabled": true,
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
-    }
-  }
 }

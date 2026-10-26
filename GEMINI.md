@@ -1,51 +1,65 @@
 # GEMINI.md
 
-## Project Overview
+## Project overview
 
-This project is the personal portfolio and curriculum vitae (CV) for Toni Mubarok. It is a modern, static website built with plain HTML, CSS, and JavaScript.
+This repository is Toni Mubarok's static portfolio and CV. It uses plain HTML,
+CSS, and JavaScript with Bun, Parcel, Tailwind CSS, and Preline.
 
-The key technologies and architectural choices are:
-- **Bundler**: [Parcel](https://parceljs.org/) is used to bundle all assets (HTML, CSS, JS). The main entry point is `src/index.html`.
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) is used for styling. The source CSS file is `src/css/source.css`, which is compiled into `src/style.css`.
-- **UI Components**: The project uses [Preline](https://preline.co/), a set of pre-built UI components based on Tailwind CSS, for some interactive elements.
-- **HTML Structure**: The HTML is modular, using `posthtml-include` to assemble pages from smaller components located in the `src/component/` directory.
-- **JavaScript**: The main application logic is in `src/app.js`. It includes:
-    - A dark/light mode theme switcher that respects user's local storage preference and system settings.
-    - A user identity management system that generates a unique fingerprint for new visitors and stores it in a cookie for persistence.
-- **Code Quality**: [Biome](https://biomejs.dev/) is used for code formatting and linting.
+## Architecture
 
-## Building and Running
+- Parcel entry points are the HTML files matched by `package.json`'s `source` field.
+- `src/index.html` is the main portfolio page.
+- `src/projects.html` and `src/resume.html` are additional pages.
+- HTML is composed from `src/component/*.html` using PostHTML includes.
+- Tailwind source is `src/css/source.css`; `src/style.css` is generated.
+- Client logic lives in `src/scripts/app.js`.
+- Preline provides theme-toggle and other UI behavior.
+- An anonymous player ID is generated with `crypto.randomUUID()` when available and
+  stored under `anon_player_id` in `localStorage`. No browser fingerprint is used.
 
-### Development
+## Development
 
-To start the local development server:
+Install dependencies:
 
-```bash
+```sh
+bun install
+```
+
+Start Parcel with formatting and hot reload:
+
+```sh
 bun start
 ```
 
-This command will also run the Biome formatter. The development server will watch for changes in the `src` directory and automatically reload.
+Format source:
 
-### Production Build
+```sh
+bun run prettier
+```
 
-To build the project for production:
+## Production build
 
-```bash
+```sh
 bun run build
 ```
 
-**Note:** The build process currently requires Node.js. This is because Parcel, our bundler, relies on `Module.load`, which is not yet fully supported by Bun.
+The build removes `dist/` and `public/`, rebuilds Tailwind CSS, bundles
+`src/scripts/app.js` and Preline, runs Parcel, and generates optimized HTML output.
 
-This command will:
-1.  Clean the `dist` directory.
-2.  Build the Tailwind CSS.
-3.  Run Parcel to create a production-optimized build in the `dist` directory.
+Bun is the package manager and runs the scripts, but Parcel 2.16.4 still depends on
+Node.js internals (`Module.load`). Node.js must remain installed for the full build.
 
-## Development Conventions
+Preview the latest production build:
 
-- **Code Formatting**: All code in the `src` directory should be formatted using Biome. The `bun start` command runs this automatically, but you can also run it manually:
-  ```bash
-  bun run prettier
-  ```
-- **Modularity**: HTML should be kept modular. Create reusable components in the `src/component/` directory and include them in the main pages using the `<include>` tag.
-- **Styling**: Utility-first styling with Tailwind CSS is the convention. Avoid writing custom CSS where possible.
+```sh
+python3 -m http.server 8000 --directory dist
+```
+
+## Editing conventions
+
+- Edit `src/scripts/app.js`, not generated `src/script.js`.
+- Edit `src/css/source.css`, not generated `src/style.css`.
+- Keep HTML modular and preserve relative `<include>` paths.
+- Keep theme behavior compatible with Preline's `hs_theme` key and theme buttons.
+- Keep anonymous identity non-fingerprinting unless the product requirements change.
+- Prefer existing Tailwind utilities and installed dependencies over new custom code.

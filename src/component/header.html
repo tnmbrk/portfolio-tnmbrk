@@ -3,20 +3,24 @@
   class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm"
 >
   <nav
-    class="mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-[24px] mx-2 flex flex-wrap md:flex-nowrap items-center justify-between p-1 ps-4 md:py-0 sm:mx-auto dark:bg-neutral-900 dark:border-neutral-700"
+    class="mt-4 relative max-w-3xl w-full bg-white border border-gray-200 rounded-[24px] mx-2 flex flex-wrap lg:flex-nowrap items-center justify-between p-1 ps-4 lg:py-0 sm:mx-auto dark:bg-neutral-900 dark:border-neutral-700"
   >
     <div class="flex items-center">
       <!-- Logo -->
-      <a class="shrink-0" href="#" alt="Logo">
+      <a class="shrink-0" href="./index.html" aria-label="Go to homepage">
         <img
           class="shrink-0 size-12 grayscale dark:invert"
           src="https://ik.imagekit.io/makanmalam1kali/Assets/logo_color_fNQDTXMSv.png?tr=w-72%2Ch-72%2Cfo-auto"
           alt="Toni Mubarok"
+          width="48"
+          height="48"
+          decoding="async"
+          fetchpriority="high"
         />
       </a>
       <a
         class="flex-none rounded-md text-xl inline-block font-semibold text-gray-800 hover:text-gray-800 focus:outline-hidden dark:border-neutral-200 dark:text-neutral-100 dark:hover:text-neutral-200"
-        href="#"
+        href="./index.html"
         aria-label="Toni Mubarok"
       >
         Toni M.
@@ -24,7 +28,7 @@
       <!-- End Logo -->
     </div>
 
-    <div class="flex items-center gap-1 md:order-4 md:ms-4">
+    <div class="flex shrink-0 items-center gap-1 lg:order-4 lg:ms-4">
       <a
         class="w-full sm:w-auto whitespace-nowrap py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800 dark:hover:bg-neutral-200"
         href="https://drive.google.com/file/d/1YIAqg_uhFxIezkPnrLApM6HVqQw3Ux9I/view?usp=sharing"
@@ -32,14 +36,23 @@
         rel="noreferrer"
         aria-label="Download CV"
       >
-        Download CV
+        <span data-i18n="downloadCv">Download CV</span>
       </a>
 
       <button
         type="button"
-        class="hs-dark-mode-active:hidden block hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+        class="px-2 py-2 text-xs font-medium text-gray-600 rounded-full hover:bg-gray-200 dark:text-neutral-300 dark:hover:bg-neutral-800"
+        data-language-toggle
+        aria-label="Switch language"
+      >
+        ID
+      </button>
+
+      <button
+        type="button"
+        class="dark:hidden block hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
         data-hs-theme-click-value="dark"
-        aria-label="dark mode toggle"
+        aria-label="Toggle dark mode"
       >
         <span class="group inline-flex shrink-0 justify-center items-center size-9">
           <svg
@@ -60,9 +73,9 @@
       </button>
       <button
         type="button"
-        class="hs-dark-mode-active:block hidden hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+        class="hidden dark:block hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
         data-hs-theme-click-value="light"
-        aria-label="dark mode toggle"
+        aria-label="Toggle dark mode"
       >
         <span class="group inline-flex shrink-0 justify-center items-center size-9">
           <svg
@@ -90,7 +103,7 @@
         </span>
       </button>
 
-      <div class="md:hidden">
+      <div class="lg:hidden">
         <!-- Toggle Button -->
         <button
           type="button"
@@ -139,37 +152,36 @@
 
     <div
       id="hs-navbar-header-floating"
-      class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow md:block"
-      aria-labelledby="hs-navbar-header-floating-collapse"
+      class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow lg:block lg:min-w-0"
     >
       <div
         data-hs-scrollspy="#hs-scrollspy-basic-usage"
-        class="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:ps-7 --scrollspy-offset:200"
+        class="flex flex-col lg:flex-row lg:items-center lg:justify-end gap-2 lg:gap-3 mt-3 lg:mt-0 py-2 lg:py-0 lg:ps-4 --scrollspy-offset:200"
       >
         <a
-          class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-200 active hs-scrollspy-active:underline"
+          class="whitespace-nowrap py-0.5 lg:py-3 px-4 lg:px-1 border-s-2 lg:border-s-0 lg:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-200 active hs-scrollspy-active:underline"
           href="#about"
-          >About</a
+          ><span data-i18n="about">About</span></a
         >
         <!-- <a
-          class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-200 hs-scrollspy-active:underline"
+          class="whitespace-nowrap py-0.5 lg:py-3 px-4 lg:px-1 border-s-2 lg:border-s-0 lg:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-200 hs-scrollspy-active:underline"
           href="#projects"
           >Projects</a
         > -->
         <a
-          class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-200 hs-scrollspy-active:underline"
+          class="whitespace-nowrap py-0.5 lg:py-3 px-4 lg:px-1 border-s-2 lg:border-s-0 lg:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-200 hs-scrollspy-active:underline"
           href="#skills"
-          >Skills</a
+          ><span data-i18n="skills">Skills</span></a
         >
         <a
-          class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-200 hs-scrollspy-active:underline"
+          class="whitespace-nowrap py-0.5 lg:py-3 px-4 lg:px-1 border-s-2 lg:border-s-0 lg:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-200 hs-scrollspy-active:underline"
           href="#work-experience"
-          >Work Experience</a
+          ><span data-i18n="workExperience">Work Experience</span></a
         >
         <a
-          class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-200 hs-scrollspy-active:underline"
+          class="whitespace-nowrap py-0.5 lg:py-3 px-4 lg:px-1 border-s-2 lg:border-s-0 lg:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-200 hs-scrollspy-active:underline"
           href="#education"
-          >Education</a
+          ><span data-i18n="education">Education</span></a
         >
       </div>
     </div>

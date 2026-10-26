@@ -1,57 +1,58 @@
 {
-  "name": "portfolio-tnmbrk",
-  "author": {
-    "name": "Toni Mubarok"
-  },
-  "private": true,
-  "version": "0.0.0",
-  "source": "src/*.html",
-  "browserslist": [
-    "last 2 Chrome versions",
-    "last 2 Firefox versions",
-    "last 2 Safari versions"
-  ],
-  "scripts": {
-    "start": "bun run prettier && parcel",
-    "re:build": "bun run clean && bun run prettier && bun run build:css && bun run build:js && parcel build && cd dist && bun build --target=browser --production ./*.html --outdir=../public",
-    "build": "bun run clean && bun run build:css && bun run build:js && parcel build --no-source-maps && cd dist && bun build --target=browser --production ./*.html --outdir=../public",
-    "build:css": "tailwindcss -i ./src/css/source.css -o ./src/style.css",
-    "prettier": "biome format --write ./src/",
-    "clean": "rimraf dist && rimraf public",
-    "build:js": "bun build ./src/scripts/app.js --outfile ./src/script.js --production && bun build ./node_modules/preline/dist/preline.js --outfile ./src/preline.js --production"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.3.8",
-    "@parcel/optimizer-htmlnano": "^2.16.4",
-    "@parcel/packager-raw-url": "^2.16.4",
-    "@parcel/transformer-webmanifest": "^2.16.4",
-    "@tailwindcss/forms": "^0.5.11",
-    "baseline-browser-mapping": "^2.10.25",
-    "parcel": "latest",
-    "posthtml-doctype": "^1.1.1",
-    "posthtml-include": "^2.0.1",
-    "rimraf": "^6.1.3",
-    "sharp": "^0.33.5",
-    "svgo": "^3.3.3"
-  },
-  "dependencies": {
-    "@tailwindcss/cli": "^4.2.4",
-    "js-cookie": "^3.0.5",
-    "preline": "^3.2.3",
-    "tailwindcss": "^4.2.4"
-  },
-  "nodemonConfig": {
-    "ext": "js,html",
-    "watch": [
-      "src"
+    "name": "portfolio-tnmbrk",
+    "author": {
+        "name": "Toni Mubarok"
+    },
+    "private": true,
+    "version": "0.0.0",
+    "source": "src/*.html",
+    "browserslist": [
+        "last 2 Chrome versions",
+        "last 2 Firefox versions",
+        "last 2 Safari versions"
+    ],
+    "scripts": {
+        "start": "bun run prettier && parcel",
+        "build": "bun run clean && bun run build:css && bun run build:js && parcel build --no-source-maps --dist-dir public",
+        "re:build": "bun run prettier && bun run build",
+        "build:css": "tailwindcss -i ./src/css/source.css -o ./src/style.css --minify",
+        "prettier": "biome format --write ./src/",
+        "cv:pdf": "python3 scripts/generate_cv_pdf.py",
+        "clean": "rimraf dist && rimraf public && rimraf .parcel-cache",
+        "build:js": "bun build ./src/scripts/app.js --outfile ./src/script.js --production && bun build ./node_modules/preline/dist/preline.js --outfile ./src/preline.js --production"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "2.5.14",
+        "@parcel/optimizer-htmlnano": "^2.16.4",
+        "@parcel/packager-raw-url": "^2.16.4",
+        "@parcel/transformer-jsonld": "^2.16.4",
+        "@parcel/transformer-webmanifest": "^2.16.4",
+        "@tailwindcss/forms": "^0.5.11",
+        "baseline-browser-mapping": "^2.10.25",
+        "parcel": "latest",
+        "posthtml-doctype": "^1.1.1",
+        "posthtml-include": "^2.0.1",
+        "rimraf": "^6.1.3",
+        "sharp": "^0.33.5",
+        "svgo": "^3.3.3"
+    },
+    "dependencies": {
+        "@tailwindcss/cli": "^4.2.4",
+        "preline": "^3.2.3",
+        "tailwindcss": "^4.2.4"
+    },
+    "nodemonConfig": {
+        "ext": "js,html",
+        "watch": [
+            "src"
+        ]
+    },
+    "trustedDependencies": [
+        "@parcel/watcher",
+        "@swc/core",
+        "@tailwindcss/oxide",
+        "lmdb",
+        "msgpackr-extract",
+        "sharp"
     ]
-  },
-  "trustedDependencies": [
-    "@parcel/watcher",
-    "@swc/core",
-    "@tailwindcss/oxide",
-    "lmdb",
-    "msgpackr-extract",
-    "sharp"
-  ]
 }
