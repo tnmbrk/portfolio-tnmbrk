@@ -118,11 +118,11 @@ const textTranslations = {
     'Vocational High School (SMK) in Computer Network Engineering':
         'Sekolah Menengah Kejuruan (SMK) Teknik Komputer dan Jaringan',
     'Focus: Web-Based Information Systems': 'Fokus: Sistem Informasi Berbasis Web',
-    'Coordinated release planning and helped teams deliver features on schedule.':
-        'Mengoordinasikan perencanaan rilis dan membantu tim menyelesaikan fitur sesuai jadwal.',
+    'Coordinated release planning and delivery, helping teams deliver features on schedule.':
+        'Mengoordinasikan perencanaan dan delivery rilis, membantu tim menyelesaikan fitur sesuai jadwal.',
     'Identified and cleared cross-functional blockers before they affected delivery.':
         'Mengidentifikasi dan menyelesaikan hambatan lintas fungsi sebelum memengaruhi proses pengiriman.',
-    'Connected QA, engineering, and product teams around priorities, risks, and release readiness.':
+    'Aligned QA, engineering, and product teams around priorities, risks, and release readiness.':
         'Menyelaraskan tim QA, engineering, dan produk terkait prioritas, risiko, dan kesiapan rilis.',
     'Managed timelines and communication for product and feature rollouts.':
         'Mengelola jadwal dan komunikasi untuk peluncuran produk serta fitur.',
