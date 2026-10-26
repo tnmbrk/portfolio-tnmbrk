@@ -179,6 +179,27 @@ const setLanguage = (language) => {
         element.textContent = selectedLanguage === 'id' ? textTranslations[original] || original : original;
     });
 
+    // Translate meta tags for SEO and social sharing
+    const pageTitle = translations[selectedLanguage]?.headline || translations.en.headline;
+    const pageSummary = translations[selectedLanguage]?.summary || translations.en.summary;
+
+    document.title = pageTitle;
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+        metaDescription.setAttribute('content', pageSummary);
+    }
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+        ogTitle.setAttribute('content', pageTitle);
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+        ogDescription.setAttribute('content', pageSummary);
+    }
+
     try {
         localStorage.setItem(languageKey, selectedLanguage);
     } catch (error) {
